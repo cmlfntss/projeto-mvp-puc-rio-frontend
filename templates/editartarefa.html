@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Tarefa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="parent border">
+        <header class="bg-warning m-2">
+            <h1 class="text-center p-3">Editar Tarefas</h1>
+        </header>
+        <form action"/editartarefa" method="POST" class="mb-5 container border">
+            <div class="mb-3" container>
+                <label for="edited_task" class="form-label">editando tarefa criada:</label>
+                <input type="text" class="form-control" id="edited_task" name="edited_task" value="{{ task }}">
+            <button type="submit" class="btn btn-primary m-3">salvar</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

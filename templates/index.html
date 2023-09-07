@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de Tarefas Diárias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="parent border">
+        <header class="bg-warning m-2">
+            <h1 class="text-center p-3">Lista de Tarefas do Dia</h1>
+        </header>
+
+        <form action="/inserirtarefa" method="POST" class="mb-5 container border">
+            <div class="mb-3 container">
+                <label for="camposdatarefa" class="form-label">Por favor, escreva as tarefas do dia:</label>
+                <input type="text" class="form-control" id="camposdatarefa" name="tarefasdiarias">
+                <button type="submit" class="btn btn-sm btn-warning m-3">enviar</button>
+            </div>
+        </form>
+
+        <div class="container border">
+            <h4>LISTAGEM DE TAREFAS</h4>
+            <hr />
+            {% for eachtask in todastarefas %}
+            <div class="d-flex justify-content-between mb-1 text-decoration-underline p-1">
+                <div>{{ eachtask['tarefas'] }}</div>
+                <div>
+                    <a href="{{ url_for('deletartarefa', id=eachtask['id']) }}" class="btn btn-sm bg-danger text-light">
+                        <i class="fas fa-trash"></i> DELETAR</a>
+                    <a href="{{ url_for('editartarefa', id=eachtask['id']) }}"
+                        class="btn btn-sm btn-primary text-light"> <i class="fas fa-edit"></i> EDITAR</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
