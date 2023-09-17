@@ -7,3 +7,9 @@ Lista de Tarefas: Tem como objetivo mostrar uma lista de tarefas simples, podend
 
 ## Instalando dependências
 Executar o comando `npm install bootstrap`
+
+## Visualização do Frontend:
+Após a instalação do bootstrap pelo seu terminal VSCode, o que pode te ajudar a visualizar o front de integrado é ter em seu compilador a extensão Go Live, e configurar o arquivo settings.json para que abra na porta 5000 assim como o backend.
+
+## Vídeo do projeto no YT:
+Link do vídeo postado no [YouTube](https://youtu.be/sF8-KFsaOOc)
